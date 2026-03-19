@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Process — Dhandhasaarthi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0d0d0d;
+  --ink2: #2a2a2a;
+  --muted: #6b6b6b;
+  --border: #e0ddd8;
+  --surface: #f8f6f1;
+  --warm: #f0ece3;
+  --accent: #c8472b;
+  --accent2: #1a3a2e;
+  --gold: #c4973c;
+  --bg: #fdfbf7;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+.display-md {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+.label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.label-accent {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ─── Navbar ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5.5vw;
+  height: 64px;
+  background: rgba(253,251,247,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-logo img { height: 32px; width: auto; display: block; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--ink); }
+.nav-cta {
+  background: var(--ink);
+  color: var(--bg) !important;
+  padding: 9px 20px;
+  border-radius: 2px;
+  font-weight: 500 !important;
+}
+.nav-cta:hover { background: var(--accent) !important; }
+@media (max-width: 768px) { .nav-links { display: none; } }
+
+/* ─── Page Hero ─── */
+.page-hero {
+  padding: 140px 5.5vw 80px;
+  border-bottom: 0.5px solid var(--border);
+}
+.page-hero-title { font-family: 'Playfair Display', serif; font-size: clamp(48px, 7vw, 96px); font-weight: 900; line-height: 0.95; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 32px; }
+.page-hero-sub { font-size: 18px; color: var(--muted); max-width: 640px; line-height: 1.8; font-weight: 300; }
+
+/* ─── Process Steps ─── */
+.process-section { padding: 80px 5.5vw; }
+.process-steps { margin-top: 56px; display: flex; flex-direction: column; gap: 0; }
+.process-step {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 48px;
+  padding: 56px 0;
+  border-top: 0.5px solid var(--border);
+  align-items: start;
+}
+.process-step:last-child { border-bottom: 0.5px solid var(--border); }
+.process-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 900;
+  color: var(--border);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.process-content { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.process-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3vw, 42px); font-weight: 700; color: var(--ink); line-height: 1.1; margin-bottom: 20px; }
+.process-desc { font-size: 15px; color: var(--muted); line-height: 1.9; }
+.process-deliverables { background: var(--warm); padding: 28px 32px; border-radius: 2px; }
+.process-deliverables .label { display: block; margin-bottom: 16px; }
+.deliverable-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.deliverable-list li { font-size: 14px; color: var(--ink2); display: flex; align-items: flex-start; gap: 10px; }
+.deliverable-list li::before { content: "→"; color: var(--accent); font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+
+/* ─── Engagement Models ─── */
+.engage-section { background: var(--warm); padding: 80px 5.5vw; }
+.engage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 0.5px solid var(--border); margin-top: 48px; }
+.engage-card { background: var(--bg); padding: 40px 32px; }
+.engage-type { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+.engage-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--ink); margin-bottom: 16px; }
+.engage-desc { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 24px; }
+.engage-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.engage-list li { font-size: 13px; color: var(--ink2); display: flex; align-items: flex-start; gap: 10px; }
+.engage-list li::before { content: "✓"; color: var(--accent); font-size: 12px; flex-shrink: 0; margin-top: 2px; }
+.engage-range { font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 500; color: var(--ink); border-top: 0.5px solid var(--border); padding-top: 20px; }
+.engage-range span { color: var(--muted); font-size: 12px; font-weight: 400; }
+
+/* ─── FAQ ─── */
+.faq-section { padding: 80px 5.5vw; }
+.faq-list { margin-top: 48px; display: flex; flex-direction: column; }
+.faq-item { border-top: 0.5px solid var(--border); padding: 28px 0; }
+.faq-item:last-child { border-bottom: 0.5px solid var(--border); }
+.faq-q { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
+.faq-a { font-size: 15px; color: var(--muted); line-height: 1.8; max-width: 720px; }
+
+/* ─── CTA ─── */
+.cta-section { background: var(--ink); color: var(--bg); padding: 96px 5.5vw; text-align: center; }
+
+/* ─── Btn ─── */
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  padding: 16px 36px;
+  border: none;
+  border-radius: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: #a33820; transform: translateY(-1px); }
+
+/* ─── Footer ─── */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 5.5vw;
+  border-top: 0.5px solid var(--border);
+  font-size: 13px;
+  color: var(--muted);
+}
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 13px; }
+.footer-links a:hover { color: var(--ink); }
+
+@media (max-width: 1024px) {
+  .process-content { grid-template-columns: 1fr; }
+  .engage-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .process-step { grid-template-columns: 48px 1fr; gap: 24px; }
+  .process-num { font-size: 40px; }
+  .engage-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.svg" alt="Dhandhasaarthi logo">Dhandhasaarthi</a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="index.html#portfolio">Work</a></li>
+    <li><a href="process.html" class="active">Process</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Get a Free Audit →</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <span class="label-accent" style="display: block; margin-bottom: 24px;">How We Work</span>
+  <div class="page-hero-title">Our 6-Step<br>Growth<br><em style="color: var(--accent);">System.</em></div>
+  <p class="page-hero-sub">Every Dhandhasaarthi engagement follows this framework. It's not a project plan — it's a growth operating system designed to create compounding results over time.</p>
+</div>
+
+<!-- PROCESS STEPS -->
+<div class="process-section">
+  <div class="process-steps">
+
+    <div class="process-step">
+      <div class="process-num">01</div>
+      <div class="process-content">
+        <div>
+          <div class="process-title">Discovery</div>
+          <p class="process-desc">We begin with a deep-dive audit of your business, market position, competition, and current digital performance. Most agencies skip this step. We don't. We find the real growth levers — not just the obvious ones — by asking the uncomfortable questions your previous agency never asked.</p>
+        </div>
+        <div class="process-deliverables">
+          <span class="label">Deliverables</span>
+          <ul class="deliverable-list">
+            <li>Full digital presence audit report</li>
+            <li>Competitor analysis (top 5 competitors)</li>
+            <li>Current performance baseline metrics</li>
+            <li>Growth opportunity map</li>
+            <li>Priority action ranking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="process-num">02</div>
+      <div class="process-content">
+        <div>
+          <div class="process-title">Research</div>
+          <p class="process-desc">We go deep before we go wide. Keyword research, customer persona mapping, technology audit, and market sizing — this is where strategy becomes grounded in reality. We build on intelligence, not assumptions. Every decision in the next four phases traces back to research done here.</p>
+        </div>
+        <div class="process-deliverables">
+          <span class="label">Deliverables</span>
+          <ul class="deliverable-list">
+            <li>Keyword & intent research document</li>
+            <li>Customer persona profiles (2–3)</li>
+            <li>Technology stack audit</li>
+            <li>Market size & opportunity analysis</li>
+            <li>Channel recommendation report</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="process-num">03</div>
+      <div class="process-content">
+        <div>
+          <div class="process-title">Strategy</div>
+          <p class="process-desc">A concrete 90-day roadmap with prioritized actions, expected outcomes, KPIs, and budget allocations. No vague "digital transformation" decks. No slide shows full of buzzwords. A real plan with real numbers, real timelines, and real accountability built in from day one.</p>
+        </div>
+        <div class="process-deliverables">
+          <span class="label">Deliverables</span>
+          <ul class="deliverable-list">
+            <li>90-day growth roadmap</li>
+            <li>KPI framework & success metrics</li>
+            <li>Budget allocation recommendation</li>
+            <li>Risk assessment & mitigation plan</li>
+            <li>Project timeline with milestones</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="process-num">04</div>
+      <div class="process-content">
+        <div>
+          <div class="process-title">Development</div>
+          <p class="process-desc">We build. Fast. Weekly sprints, demo calls, and full GitHub/project transparency. You always know exactly where we are. Our development process is modern, disciplined, and designed to ship features that matter — not accumulate technical debt. Every line of code is reviewed and every design decision is intentional.</p>
+        </div>
+        <div class="process-deliverables">
+          <span class="label">Deliverables</span>
+          <ul class="deliverable-list">
+            <li>Weekly sprint demos & updates</li>
+            <li>GitHub repository access</li>
+            <li>Staging environment for review</li>
+            <li>Mobile-first, performant builds</li>
+            <li>Full handover documentation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="process-num">05</div>
+      <div class="process-content">
+        <div>
+          <div class="process-title">Marketing</div>
+          <p class="process-desc">We activate organic, paid, and AI-powered channels simultaneously. Test fast, double down on what works, kill what doesn't. Data-led from day one. We don't spend your money on channels that aren't proven to work for your specific business model, audience, and market.</p>
+        </div>
+        <div class="process-deliverables">
+          <span class="label">Deliverables</span>
+          <ul class="deliverable-list">
+            <li>Multi-channel launch plan</li>
+            <li>Weekly performance reports</li>
+            <li>Ad creative & copy testing matrix</li>
+            <li>SEO implementation & tracking</li>
+            <li>Monthly strategy review calls</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="process-num">06</div>
+      <div class="process-content">
+        <div>
+          <div class="process-title">Scaling</div>
+          <p class="process-desc">Once the system works, we scale it. New channels, automation, AI optimization, and market expansion. The flywheel begins to spin on its own — and our job becomes keeping it spinning faster. This is where compounding kicks in and the early investment in the right foundations starts to pay exponential dividends.</p>
+        </div>
+        <div class="process-deliverables">
+          <span class="label">Deliverables</span>
+          <ul class="deliverable-list">
+            <li>Automated reporting systems</li>
+            <li>Scaling playbook documentation</li>
+            <li>New channel expansion roadmap</li>
+            <li>AI automation integration</li>
+            <li>Quarterly business review (QBR)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ENGAGEMENT MODELS -->
+<div class="engage-section">
+  <span class="label-accent" style="display: block; margin-bottom: 24px;">Engagement Models</span>
+  <div class="display-md" style="margin-bottom: 16px;">Choose How We<br>Work Together.</div>
+  <p style="font-size: 16px; color: var(--muted); max-width: 560px; line-height: 1.8;">Three models designed for different stages of business growth. No cookie-cutter packages — just the right structure for where you are.</p>
+  <div class="engage-grid">
+    <div class="engage-card">
+      <div class="engage-type">Model 01</div>
+      <div class="engage-title">Project-Based</div>
+      <p class="engage-desc">A defined scope, timeline, and deliverable. Perfect for a specific output: a website, an AI tool, a campaign launch, or a complete rebrand.</p>
+      <ul class="engage-list">
+        <li>Fixed scope and clear deliverables</li>
+        <li>1–12 week timelines</li>
+        <li>Milestone-based payment</li>
+        <li>Full IP transfer on completion</li>
+        <li>Post-launch support included</li>
+      </ul>
+      <div class="engage-range">₹10,000 – ₹5,00,000 <span>/ depends on scope</span></div>
+    </div>
+    <div class="engage-card" style="background: var(--ink); color: white;">
+      <div class="engage-type" style="color: rgba(255,255,255,0.4);">Model 02</div>
+      <div class="engage-title" style="color: white;">Growth Retainer</div>
+      <p class="engage-desc" style="color: rgba(255,255,255,0.6);">Our ongoing partnership model. A dedicated team executing your growth strategy every month — with full transparency and monthly reporting.</p>
+      <ul class="engage-list" style="margin-bottom: 28px;">
+        <li style="color: rgba(255,255,255,0.7);">Dedicated team of 2–4 specialists</li>
+        <li style="color: rgba(255,255,255,0.7);">Monthly KPI reviews & adjustments</li>
+        <li style="color: rgba(255,255,255,0.7);">Priority turnaround on all requests</li>
+        <li style="color: rgba(255,255,255,0.7);">Slack/WhatsApp direct access</li>
+        <li style="color: rgba(255,255,255,0.7);">Quarterly strategy deep-dives</li>
+      </ul>
+      <div class="engage-range" style="color: white; border-top-color: rgba(255,255,255,0.1);">₹40,000 – ₹2,00,000 <span style="color: rgba(255,255,255,0.4); font-size: 12px;">/ month</span></div>
+    </div>
+    <div class="engage-card">
+      <div class="engage-type">Model 03</div>
+      <div class="engage-title">Strategic Partnership</div>
+      <p class="engage-desc">Full-stack partnership for growth-stage businesses. We function as your embedded digital team — strategy, build, and execution under one roof.</p>
+      <ul class="engage-list">
+        <li>Full team access across all departments</li>
+        <li>Custom SLAs and response times</li>
+        <li>Board-level strategy access</li>
+        <li>Full-stack execution team</li>
+        <li>We win when you win</li>
+      </ul>
+      <div class="engage-range">Custom <span>/ aligned to growth</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <span class="label-accent" style="display: block; margin-bottom: 24px;">Common Questions</span>
+  <div class="display-md" style="margin-bottom: 0;">Things People<br><em style="color: var(--accent);">Usually Ask.</em></div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">How long does it take to see results?</div>
+      <p class="faq-a">It depends on the channel. Paid ads can show results within 2–4 weeks. SEO typically takes 3–6 months to compound. Development projects have fixed timelines agreed upfront. We set realistic expectations on day one and build attribution systems so you can see progress in real time.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do you sign NDAs?</div>
+      <p class="faq-a">Yes. We sign NDAs before every discovery call. Your business information, strategies, and discussions are completely confidential.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What's the minimum engagement?</div>
+      <p class="faq-a">Project-based engagements start from ₹10,000. Retainer partnerships start from ₹40,000/month. We also offer a free initial growth audit for businesses we believe we can genuinely help.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do we own the code and assets?</div>
+      <p class="faq-a">Yes. Full IP transfer is included in all project-based engagements. For retainer clients, all work produced during the engagement is yours. We don't retain any ownership over your assets.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do you report on progress?</div>
+      <p class="faq-a">Weekly written updates, monthly KPI review calls, and quarterly strategy deep-dives. We build live dashboards so you can check in on performance any time — not just when we send reports.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What industries do you work with?</div>
+      <p class="faq-a">E-commerce, SaaS, healthcare, edtech, fintech, real estate, local businesses, manufacturing, fashion, and food & hospitality. We've built playbooks for each sector — we don't treat every industry the same.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <span class="label" style="display: block; margin-bottom: 24px; color: rgba(255,255,255,0.4);">Start the Process</span>
+  <div class="display-md" style="color: white; margin-bottom: 24px;">Ready to Start?<br><em style="color: var(--accent);">Let's Talk.</em></div>
+  <p style="font-size: 16px; color: rgba(255,255,255,0.55); margin-bottom: 40px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.8;">Book a free 45-minute audit call. We'll map out your growth opportunities and tell you exactly what we'd do — even if you don't hire us.</p>
+  <a href="contact.html" class="btn-primary">Book Free Growth Audit →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Dhandhasaarthi. All rights reserved.</span>
+  <ul class="footer-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

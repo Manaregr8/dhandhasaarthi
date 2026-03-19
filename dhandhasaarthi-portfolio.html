@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhandhasaarthi — Your Business Growth Partner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #0d0d0d;
+  --ink2: #2a2a2a;
+  --muted: #6b6b6b;
+  --border: #e0ddd8;
+  --surface: #f8f6f1;
+  --warm: #f0ece3;
+  --accent: #c8472b;
+  --accent2: #1a3a2e;
+  --gold: #c4973c;
+  --bg: #fdfbf7;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ─── Typography ─── */
+.display {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(52px, 8vw, 110px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+.display-md {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+.display-sm {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.label-accent {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ─── Sections ─── */
+section { padding: 96px 48px; max-width: 1280px; margin: 0 auto; }
+.full-bleed { max-width: none; background: var(--ink); color: var(--bg); }
+.full-bleed-warm { max-width: none; background: var(--warm); }
+.full-bleed-green { max-width: none; background: var(--accent2); color: var(--bg); }
+
+.section-inner { max-width: 1280px; margin: 0 auto; padding: 96px 48px; }
+
+/* ─── Layout Helpers ─── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+.grid-1-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+}
+.grid-1-2.align-end { align-items: end; }
+.grid-1-2.align-start { align-items: start; }
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.stats-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 0.5px solid var(--border);
+}
+
+/* ─── Icon Marks (no emojis) ─── */
+.icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  padding: 0 10px;
+  border: 0.5px solid var(--border);
+  border-radius: 2px;
+  background: var(--warm);
+  color: var(--accent2);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.impact-mark {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ─── Navbar ─── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5.5vw;
+  height: 64px;
+  background: rgba(253,251,247,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-logo img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-cta {
+  background: var(--ink);
+  color: var(--bg) !important;
+  padding: 9px 20px;
+  border-radius: 2px;
+  font-weight: 500 !important;
+}
+.nav-cta:hover { background: var(--accent); color: white !important; }
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+}
+
+/* ─── Hero ─── */
+#hero {
+  padding-top: 32px;
+  padding-bottom: 96px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: end;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--warm);
+  border: 0.5px solid var(--border);
+  border-radius: 2px;
+  padding: 8px 16px;
+  margin-bottom: 32px;
+}
+.badge-dot {
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.hero-headline-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.hero-arrow-bg {
+  position: absolute;
+  right: 4vw;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80%;
+  width: auto;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-headline { color: var(--ink); margin: 0; width: 100%; padding: 128px 5.5vw 48px; box-sizing: border-box; text-align: left; position: relative; z-index: 1; }
+.hero-headline em {
+  font-style: italic;
+  color: var(--accent);
+}
+.hero-sub {
+  font-size: 18px;
+  color: var(--muted);
+  font-weight: 300;
+  max-width: 480px;
+  margin-bottom: 48px;
+  line-height: 1.7;
+}
+.hero-actions { display: flex; align-items: center; gap: 24px; }
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  padding: 16px 36px;
+  border: none;
+  border-radius: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: #a33820; transform: translateY(-1px); }
+.btn-ghost {
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+.btn-ghost:hover { color: var(--ink); }
+.hero-right { padding-bottom: 12px; }
+.hero-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 0.5px solid var(--border);
+}
+.hero-stat {
+  background: var(--bg);
+  padding: 28px 24px;
+}
+.hero-stat .num {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.hero-stat .num span { color: var(--accent); }
+
+/* ─── Marquee ─── */
+.marquee-strip {
+  border-top: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+  padding: 18px 0;
+  overflow: hidden;
+  background: var(--warm);
+}
+.marquee-track {
+  display: flex;
+  gap: 0;
+  animation: marquee 25s linear infinite;
+  white-space: nowrap;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 40px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.marquee-sep {
+  color: var(--accent);
+  font-size: 16px;
+}
+
+/* ─── Problem / Insight ─── */
+.insight-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 56px;
+  align-items: start;
+  padding-top: 64px;
+  border-top: 0.5px solid var(--border);
+}
+.insight-cards { display: flex; flex-direction: column; gap: 1px; }
+.insight-card {
+  background: var(--bg);
+  border: 0.5px solid var(--border);
+  padding: 32px;
+  transition: background 0.2s;
+}
+.insight-card:hover { background: var(--warm); }
+.insight-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 900;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.insight-card h3 { margin-bottom: 12px; }
+.insight-card p { color: var(--muted); font-size: 14px; }
+
+/* ─── Services ─── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 0.5px solid var(--border);
+  margin-top: 48px;
+}
+.service-card {
+  background: var(--bg);
+  padding: 34px 30px;
+  transition: background 0.2s, transform 0.15s;
+  cursor: default;
+}
+.service-card:hover { background: var(--ink); }
+.service-card:hover .service-title { color: var(--bg); }
+.service-card:hover .service-desc { color: rgba(255,255,255,0.6); }
+.service-card:hover .service-icon { border-color: rgba(255,255,255,0.2); color: var(--accent); }
+.service-card:hover .label { color: rgba(255,255,255,0.35); }
+.service-icon {
+  width: 48px; height: 48px;
+  border: 0.5px solid var(--border);
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  background: var(--warm);
+  margin-bottom: 24px;
+  transition: border-color 0.2s;
+}
+.service-title { font-size: 20px; font-weight: 500; margin-bottom: 16px; transition: color 0.2s; }
+.service-desc { font-size: 14px; color: var(--muted); line-height: 1.7; transition: color 0.2s; margin-bottom: 24px; }
+.service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 0.5px solid var(--border);
+  color: var(--muted);
+  border-radius: 1px;
+}
+
+/* ─── Tech Stack ─── */
+.stack-section { background: var(--ink); color: var(--bg); }
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+  margin-top: 48px;
+}
+.stack-card {
+  background: var(--ink2);
+  padding: 32px 24px;
+}
+.stack-card-title {
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.stack-items { display: flex; flex-direction: column; gap: 10px; }
+.stack-item {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.stack-dot {
+  width: 4px; height: 4px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ─── Portfolio / Proof ─── */
+.portfolio-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  margin-bottom: 56px;
+  padding-bottom: 48px;
+  border-bottom: 0.5px solid var(--border);
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 0.5px solid var(--border);
+}
+.project-card {
+  background: var(--bg);
+  padding: 34px;
+  transition: background 0.2s;
+}
+.project-card:hover { background: var(--surface); }
+.project-type {
+  display: inline-block;
+  background: var(--warm);
+  border: 0.5px solid var(--border);
+  padding: 4px 12px;
+  border-radius: 1px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.project-name { font-size: 22px; font-weight: 500; margin-bottom: 12px; }
+.project-desc { font-size: 14px; color: var(--muted); margin-bottom: 24px; line-height: 1.7; }
+.project-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.project-pill {
+  background: var(--warm);
+  border: 0.5px solid var(--border);
+  padding: 4px 12px;
+  font-size: 12px;
+  border-radius: 1px;
+  color: var(--ink2);
+}
+.project-impact {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--accent2);
+}
+
+/* ─── Team ─── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 0.5px solid var(--border);
+  margin-top: 48px;
+}
+.team-card {
+  background: var(--bg);
+  padding: 30px 24px;
+}
+.team-avatar {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: var(--warm);
+  border: 0.5px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.team-name { font-size: 16px; font-weight: 500; margin-bottom: 4px; }
+.team-role { font-size: 12px; color: var(--accent); font-family: 'JetBrains Mono', monospace; letter-spacing: 0.06em; margin-bottom: 12px; }
+.team-bio { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.team-skills { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 14px; }
+.skill-tag {
+  font-size: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 3px 8px;
+  background: var(--warm);
+  border: 0.5px solid var(--border);
+  border-radius: 1px;
+  color: var(--muted);
+}
+
+/* ─── Case Studies ─── */
+.case-grid { display: flex; flex-direction: column; gap: 1px; margin-top: 48px; }
+.case-card {
+  background: var(--bg);
+  border: 0.5px solid var(--border);
+  display: grid;
+  grid-template-columns: 280px 1fr 1fr 1fr;
+  gap: 0;
+}
+.case-section {
+  padding: 32px 28px;
+  border-right: 0.5px solid var(--border);
+}
+.case-section:last-child { border-right: none; }
+.case-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.case-text { font-size: 14px; color: var(--muted); line-height: 1.7; }
+.case-result-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.case-result-num span { color: var(--accent); }
+.case-industry {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--warm);
+  border: 0.5px solid var(--border);
+  border-radius: 1px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+/* ─── Why Choose ─── */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+  margin-top: 48px;
+}
+.why-card {
+  background: #111;
+  padding: 36px 30px;
+  border: 0.5px solid rgba(255,255,255,0.06);
+}
+.why-icon {
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  width: fit-content;
+  padding: 8px 10px;
+  border: 0.5px solid rgba(255,255,255,0.14);
+  border-radius: 2px;
+  background: rgba(255,255,255,0.04);
+  margin-bottom: 24px;
+  display: block;
+}
+.why-title { font-size: 20px; font-weight: 500; color: white; margin-bottom: 16px; }
+.why-desc { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+.why-accent { color: var(--accent); font-weight: 500; }
+
+/* ─── Workflow ─── */
+.workflow-steps {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  margin-top: 48px;
+  border: 0.5px solid var(--border);
+}
+.workflow-step {
+  padding: 28px 22px;
+  border-right: 0.5px solid var(--border);
+  position: relative;
+  transition: background 0.2s;
+}
+.workflow-step:last-child { border-right: none; }
+.workflow-step:hover { background: var(--warm); }
+.workflow-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 900;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.workflow-title { font-size: 15px; font-weight: 500; margin-bottom: 12px; }
+.workflow-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+/* ─── Engagement Models ─── */
+.engage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.engage-card {
+  border: 0.5px solid var(--border);
+  padding: 36px 30px;
+  border-radius: 2px;
+  position: relative;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.engage-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+.engage-card.featured { border-color: var(--accent); background: var(--warm); }
+.engage-badge {
+  position: absolute;
+  top: -1px; right: 24px;
+  background: var(--accent);
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 0 0 4px 4px;
+}
+.engage-type {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.engage-title { font-size: 24px; font-weight: 500; margin-bottom: 16px; }
+.engage-desc { font-size: 14px; color: var(--muted); margin-bottom: 28px; line-height: 1.7; }
+.engage-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 36px; }
+.engage-list li {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.engage-list li::before {
+  content: '';
+  width: 4px; height: 4px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.engage-range {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.engage-range span { font-size: 14px; font-family: 'DM Sans', sans-serif; color: var(--muted); font-weight: 300; }
+
+/* ─── Industries ─── */
+.industry-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 36px;
+}
+.industry-pill {
+  padding: 12px 18px;
+  border: 0.5px solid var(--border);
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: default;
+  transition: background 0.2s, border-color 0.2s;
+}
+.industry-pill:hover { background: var(--ink); color: white; border-color: var(--ink); }
+.industry-icon { font-size: 10px; }
+
+/* ─── Vision ─── */
+.vision-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.vision-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  font-style: italic;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.4;
+  border-left: 3px solid var(--accent);
+  padding-left: 24px;
+}
+.vision-pillars { display: flex; flex-direction: column; gap: 18px; }
+.vision-pillar {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.pillar-icon {
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.05);
+  border: 0.5px solid rgba(255,255,255,0.1);
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  flex-shrink: 0;
+}
+.pillar-text h4 { font-size: 15px; font-weight: 500; color: white; margin-bottom: 6px; }
+.pillar-text p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+/* ─── CTA ─── */
+.cta-section {
+  text-align: center;
+  padding: 100px 48px;
+  border-top: 0.5px solid var(--border);
+}
+.cta-eyebrow { margin-bottom: 24px; }
+.cta-headline { margin-bottom: 24px; }
+.cta-sub { font-size: 18px; color: var(--muted); font-weight: 300; max-width: 560px; margin: 0 auto 32px; }
+.cta-actions { display: flex; align-items: center; justify-content: center; gap: 24px; }
+.cta-contact {
+  font-size: 13px;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ─── Footer ─── */
+footer {
+  border-top: 0.5px solid var(--border);
+  padding: 32px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.footer-logo span { color: var(--accent); }
+.footer-links { display: flex; gap: 32px; }
+.footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; }
+.footer-copy { font-size: 12px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+
+/* ─── Divider ─── */
+.divider { border: none; border-top: 0.5px solid var(--border); margin: 0; }
+
+/* ─── Utilities ─── */
+.mt8 { margin-top: 8px; }
+.mt12 { margin-top: 12px; }
+.mt16 { margin-top: 16px; }
+.mt24 { margin-top: 24px; }
+.mt32 { margin-top: 32px; }
+.mt48 { margin-top: 48px; }
+.mt64 { margin-top: 64px; }
+.mb8 { margin-bottom: 8px; }
+.mb16 { margin-bottom: 16px; }
+.mb24 { margin-bottom: 24px; }
+.mb32 { margin-bottom: 32px; }
+.mb48 { margin-bottom: 48px; }
+.text-muted { color: var(--muted); }
+.text-accent { color: var(--accent); }
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.6s ease forwards; }
+.delay-1 { animation-delay: 0.1s; opacity: 0; }
+.delay-2 { animation-delay: 0.2s; opacity: 0; }
+.delay-3 { animation-delay: 0.3s; opacity: 0; }
+.delay-4 { animation-delay: 0.4s; opacity: 0; }
+
+@media (max-width: 1024px) {
+  #hero { grid-template-columns: 1fr; gap: 48px; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .stack-grid { grid-template-columns: repeat(3, 1fr); }
+  .workflow-steps { grid-template-columns: repeat(3, 1fr); }
+  .workflow-step { border-bottom: 0.5px solid var(--border); }
+  .case-card { grid-template-columns: 1fr 1fr; }
+  section { padding: 72px 24px; }
+  .section-inner { padding: 72px 24px; }
+}
+
+@media (max-width: 768px) {
+  section { padding: 64px 18px; }
+  .section-inner { padding: 64px 18px; }
+
+  .marquee-strip { padding-left: 18px; padding-right: 18px; }
+
+  .grid-2,
+  .grid-1-2 { grid-template-columns: 1fr; gap: 28px; }
+  .grid-3 { grid-template-columns: 1fr; gap: 14px; }
+
+  #hero { padding-top: 72px; padding-bottom: 72px; gap: 40px; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .hero-stat-grid { grid-template-columns: 1fr; }
+
+  .services-grid,
+  .project-grid,
+  .team-grid { grid-template-columns: 1fr; }
+
+  .portfolio-intro { grid-template-columns: 1fr; }
+
+  .stack-grid { grid-template-columns: repeat(2, 1fr); }
+  .workflow-steps { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: 1fr; }
+  .engage-grid { grid-template-columns: 1fr; }
+  .vision-layout { grid-template-columns: 1fr; gap: 36px; }
+  .case-card { grid-template-columns: 1fr; }
+  .stats-3 { grid-template-columns: 1fr; }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 28px 18px;
+  }
+  .footer-links { flex-wrap: wrap; gap: 16px; }
+
+  .cta-actions { width: 100%; }
+  .cta-actions a { width: 100%; text-align: center; }
+}
+
+@media (max-width: 560px) {
+  .hero-badge { margin-bottom: 24px; }
+  .hero-sub { font-size: 16px; margin-bottom: 32px; }
+  .marquee-item { padding: 0 22px; }
+  .cta-section { padding: 80px 18px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="nav-logo"><img src="logo.svg" alt="Dhandhasaarthi logo">Dhandhasaarthi</a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Get a Free Audit →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+   <div class="hero-headline-wrap">
+     <div class="display hero-headline fade-up delay-1">
+      We Don't Build Brands.<em>We Build</em> Revenue.
+    </div>
+    <img src="arrow.svg" alt="" class="hero-arrow-bg" aria-hidden="true">
+   </div>
+<section id="hero">
+
+  <div>
+    
+    <div class="hero-badge fade-up">
+      <div class="badge-dot"></div>
+      <span class="label">Available for new projects — 2025</span>
+    </div>
+    
+    <p class="hero-sub fade-up delay-2">
+      Dhandhasaarthi is a full-stack AI & digital growth agency. We combine cutting-edge technology with sharp business strategy to turn your digital presence into a predictable revenue engine.
+    </p>
+    <div class="hero-actions fade-up delay-3">
+      <a href="#engage" class="btn-primary">Get a Free Growth Audit →</a>
+      <a href="#portfolio" class="btn-ghost">See Our Work ↓</a>
+    </div>
+    <div style="margin-top: 48px; padding-top: 32px; border-top: 0.5px solid var(--border);" class="fade-up delay-4">
+      <span class="label">Trusted expertise in</span>
+      <p style="font-size: 14px; color: var(--muted); margin-top: 8px;">AI Development · Website & App Engineering · Performance Marketing · SEO & Search AI · E-commerce Growth</p>
+    </div>
+  </div>
+  <div class="hero-right fade-up delay-2">
+    <div class="hero-stat-grid">
+      <div class="hero-stat">
+        <div class="num">7<span>+</span></div>
+        <span class="label">Expert Specialists</span>
+        <p style="font-size: 13px; color: var(--muted); margin-top: 8px;">Across AI, dev, marketing & design</p>
+      </div>
+      <div class="hero-stat">
+        <div class="num">10<span>+</span></div>
+        <span class="label">Core Services</span>
+        <p style="font-size: 13px; color: var(--muted); margin-top: 8px;">End-to-end digital capability</p>
+      </div>
+      <div class="hero-stat">
+        <div class="num">∞</div>
+        <span class="label">Scalability</span>
+        <p style="font-size: 13px; color: var(--muted); margin-top: 8px;">Systems built to grow with you</p>
+      </div>
+      <div class="hero-stat">
+        <div class="num" style="font-size: 28px; padding-top: 6px;">AI-First</div>
+        <span class="label">Agency Approach</span>
+        <p style="font-size: 13px; color: var(--muted); margin-top: 8px;">Every solution powered by intelligence</p>
+      </div>
+    </div>
+    <div style="margin-top: 24px; background: var(--accent); padding: 24px 28px; border-radius: 2px;">
+      <p style="font-size: 13px; color: rgba(255,255,255,0.75); margin-bottom: 8px;">"Dhandha" = Business &nbsp;·&nbsp; "Saarthi" = Strategic Guide</p>
+      <p style="font-size: 15px; color: white; font-weight: 500;">We are your charioteer in the battle for market share.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span class="marquee-item">AI Development <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Website Engineering <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Performance Marketing <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">SEO & Search AI <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">E-commerce Growth <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Automation <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Data Analytics <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">SaaS Development <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Business Consulting <span class="marquee-sep">◆</span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="marquee-item">AI Development <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Website Engineering <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Performance Marketing <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">SEO & Search AI <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">E-commerce Growth <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Automation <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Data Analytics <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">SaaS Development <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Business Consulting <span class="marquee-sep">◆</span></span>
+  </div>
+</div>
+
+<!-- PROBLEM / INSIGHT -->
+<section>
+  <div class="grid-2">
+    <div>
+      <span class="label-accent mb16 mt0" style="display: block; margin-bottom: 24px;">The Problem We Solve</span>
+      <div class="display-md" style="margin-bottom: 32px;">Most Agencies Deliver Deliverables.<br>We Deliver <em style="font-style: italic; color: var(--accent);">Outcomes.</em></div>
+      <p style="font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 24px;">
+        Indian businesses are losing ₹50,000–₹5,00,000/month to outdated websites, zero AI strategy, and marketing agencies that report on vanity metrics instead of revenue.
+      </p>
+      <p style="font-size: 16px; color: var(--muted); line-height: 1.8;">
+        Dhandhasaarthi was built to fix this. We're not a vendor. We're your growth partner — with skin in the game and a mandate to generate measurable ROI.
+      </p>
+    </div>
+    <div class="insight-cards">
+      <div class="insight-card">
+        <div class="insight-num">01</div>
+        <h3>No More Siloed Solutions</h3>
+        <p>One team. Strategy, tech, marketing, AI — all aligned toward a single number: your revenue growth.</p>
+      </div>
+      <div class="insight-card">
+        <div class="insight-num">02</div>
+        <h3>AI-Powered, Not AI-Washed</h3>
+        <p>We don't put "AI" in our deck for optics. We build real LLM tools, automation pipelines, and AI agents that cut your operational costs by 30–60%.</p>
+      </div>
+      <div class="insight-card">
+        <div class="insight-num">03</div>
+        <h3>Full-Stack Accountability</h3>
+        <p>We own the outcome. Our engagement models are tied to your growth milestones — not our billable hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="padding-top: 0;">
+  <div style="border-top: 0.5px solid var(--border); padding-top: 64px;">
+    <span class="label-accent" style="display: block; margin-bottom: 24px;">What We Do</span>
+    <div class="grid-1-2 align-end" style="margin-bottom: 48px;">
+      <div class="display-md">Every Service,<br>One Goal:<br><em style="color: var(--accent);">Your Growth.</em></div>
+      <p style="font-size: 16px; color: var(--muted); max-width: 520px; justify-self: end; line-height: 1.8;">
+        We cover the full spectrum of digital transformation — from your first website to enterprise-grade AI automation. No matter where you are, we know the next move.
+      </p>
+    </div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">WEB</div>
+      <span class="label" style="display: block; margin-bottom: 12px;">Service 01</span>
+      <div class="service-title">Website Development</div>
+      <p class="service-desc">Custom-coded websites, WordPress, Shopify stores, SaaS platforms, and landing pages engineered for speed, conversion, and search ranking — not just aesthetics.</p>
+      <div class="service-tags">
+        <span class="tag">Custom Code</span><span class="tag">WordPress</span><span class="tag">Shopify</span><span class="tag">SaaS</span><span class="tag">Landing Pages</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">OPS</div>
+      <span class="label" style="display: block; margin-bottom: 12px;">Service 02</span>
+      <div class="service-title">Software & Product Development</div>
+      <p class="service-desc">Business automation tools, custom dashboards, data pipelines, and SaaS products that eliminate manual work and give you an operational edge your competitors don't have.</p>
+      <div class="service-tags">
+        <span class="tag">Dashboards</span><span class="tag">Automation</span><span class="tag">SaaS</span><span class="tag">Data Pipelines</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">AI</div>
+      <span class="label" style="display: block; margin-bottom: 12px;">Service 03</span>
+      <div class="service-title">AI Development</div>
+      <p class="service-desc">From intelligent chatbots to autonomous AI agents and LLM-powered SaaS — we build AI that works for your business 24/7 without adding headcount.</p>
+      <div class="service-tags">
+        <span class="tag">AI Agents</span><span class="tag">LLM Tools</span><span class="tag">Chatbots</span><span class="tag">Automation</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">SEO</div>
+      <span class="label" style="display: block; margin-bottom: 12px;">Service 04</span>
+      <div class="service-title">SEO & Search AI Optimization</div>
+      <p class="service-desc">Rank not just on Google — but in ChatGPT, Perplexity, and Gemini AI overviews. Be the answer your customers find, wherever they search.</p>
+      <div class="service-tags">
+        <span class="tag">Technical SEO</span><span class="tag">AI Overviews</span><span class="tag">Programmatic</span><span class="tag">Off-Page</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">ADS</div>
+      <span class="label" style="display: block; margin-bottom: 12px;">Service 05</span>
+      <div class="service-title">Performance Marketing</div>
+      <p class="service-desc">Google Ads and Meta campaigns engineered around unit economics — not impressions. Every rupee tracked, optimized, and scaled for maximum ROAS.</p>
+      <div class="service-tags">
+        <span class="tag">Google Ads</span><span class="tag">Meta Ads</span><span class="tag">Funnels</span><span class="tag">CRO</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">ECOM</div>
+      <span class="label" style="display: block; margin-bottom: 12px;">Service 06</span>
+      <div class="service-title">E-commerce & Creative</div>
+      <p class="service-desc">Amazon, Flipkart, and Shopify growth — from product listing optimization to AI-powered ad creatives that stop the scroll and convert the click.</p>
+      <div class="service-tags">
+        <span class="tag">Amazon SEO</span><span class="tag">Flipkart</span><span class="tag">Creative</span><span class="tag">Video Ads</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<div class="full-bleed stack-section">
+  <div class="section-inner">
+    <span class="label" style="display: block; margin-bottom: 24px; color: rgba(255,255,255,0.4);">Technology Stack</span>
+    <div class="grid-1-2 align-start" style="gap: 48px; margin-bottom: 48px;">
+      <div>
+        <div class="display-sm" style="color: white; margin-bottom: 20px;">We Build With the Best Tools.</div>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.8;">Our technology choices are deliberate. We use mature, battle-tested stacks for reliability and cutting-edge AI tools for competitive advantage.</p>
+      </div>
+      <div class="grid-3">
+        <div>
+          <div style="font-size: 11px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px;">Languages</div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <span style="font-size: 13px; color: rgba(255,255,255,0.65);">● Python</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.65);">● JavaScript / TypeScript</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.65);">● HTML / CSS</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.65);">● SQL</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 11px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px;">Frameworks</div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <span style="font-size: 13px; color: rgba(255,255,255,0.65);">● React / Next.js</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.65);">● Node.js / Express</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.65);">● Django / FastAPI</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.65);">● WordPress / Shopify</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 11px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px;">AI & Data</div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <span style="font-size: 13px; color: rgba(255,255,255,0.65);">● OpenAI / Claude APIs</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.65);">● LangChain / n8n</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.65);">● TensorFlow / Pandas</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.65);">● Power BI / Tableau</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-card">
+        <div class="stack-card-title">Frontend</div>
+        <div class="stack-items">
+          <div class="stack-item"><span class="stack-dot"></span>React.js</div>
+          <div class="stack-item"><span class="stack-dot"></span>Next.js</div>
+          <div class="stack-item"><span class="stack-dot"></span>Tailwind CSS</div>
+          <div class="stack-item"><span class="stack-dot"></span>GSAP / Framer</div>
+          <div class="stack-item"><span class="stack-dot"></span>Three.js</div>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-title">Backend</div>
+        <div class="stack-items">
+          <div class="stack-item"><span class="stack-dot"></span>Node.js</div>
+          <div class="stack-item"><span class="stack-dot"></span>Python / FastAPI</div>
+          <div class="stack-item"><span class="stack-dot"></span>PostgreSQL</div>
+          <div class="stack-item"><span class="stack-dot"></span>MongoDB</div>
+          <div class="stack-item"><span class="stack-dot"></span>Redis</div>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-title">AI / ML</div>
+        <div class="stack-items">
+          <div class="stack-item"><span class="stack-dot"></span>GPT-4o / Claude</div>
+          <div class="stack-item"><span class="stack-dot"></span>LangChain</div>
+          <div class="stack-item"><span class="stack-dot"></span>Scikit-learn</div>
+          <div class="stack-item"><span class="stack-dot"></span>Hugging Face</div>
+          <div class="stack-item"><span class="stack-dot"></span>Vector DBs</div>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-title">Marketing</div>
+        <div class="stack-items">
+          <div class="stack-item"><span class="stack-dot"></span>Google Ads</div>
+          <div class="stack-item"><span class="stack-dot"></span>Meta Business</div>
+          <div class="stack-item"><span class="stack-dot"></span>SEMrush / Ahrefs</div>
+          <div class="stack-item"><span class="stack-dot"></span>GA4 / GTM</div>
+          <div class="stack-item"><span class="stack-dot"></span>Hotjar / Clarity</div>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-card-title">Automation</div>
+        <div class="stack-items">
+          <div class="stack-item"><span class="stack-dot"></span>n8n / Make.com</div>
+          <div class="stack-item"><span class="stack-dot"></span>Zapier</div>
+          <div class="stack-item"><span class="stack-dot"></span>AWS Lambda</div>
+          <div class="stack-item"><span class="stack-dot"></span>GitHub Actions</div>
+          <div class="stack-item"><span class="stack-dot"></span>Docker</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="portfolio-intro">
+    <div>
+      <span class="label-accent" style="display: block; margin-bottom: 24px;">Proof of Work</span>
+      <div class="display-md">Real Projects.<br>Real Code.<br>Real Impact.</div>
+    </div>
+    <div style="display: flex; flex-direction: column; justify-content: flex-end; gap: 16px;">
+      <p style="font-size: 16px; color: var(--muted); line-height: 1.8;">Our GitHub, CodePen, and project archives reflect a team that ships. Below is a curated selection of the systems, tools, and products we've built — each one solving a concrete business problem.</p>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="https://github.com/Manaregr8" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); text-decoration: none; border: 0.5px solid var(--border); padding: 8px 16px; border-radius: 2px;" target="_blank">↗ GitHub: Manaregr8</a>
+        <a href="https://github.com/shagun122" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); text-decoration: none; border: 0.5px solid var(--border); padding: 8px 16px; border-radius: 2px;" target="_blank">↗ GitHub: Shagun</a>
+        <a href="https://codepen.io/manaregr8" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); text-decoration: none; border: 0.5px solid var(--border); padding: 8px 16px; border-radius: 2px;" target="_blank">↗ CodePen Portfolio</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-grid">
+    <div class="project-card">
+      <span class="project-type">AI Development</span>
+      <div class="project-name">AI Business Automation Agent</div>
+      <p class="project-desc">A multi-step AI agent that automates lead qualification, email responses, and CRM data entry — eliminating 15+ hours of manual work per week for SME sales teams.</p>
+      <div class="project-meta">
+        <span class="project-pill">Python</span>
+        <span class="project-pill">LangChain</span>
+        <span class="project-pill">OpenAI API</span>
+        <span class="project-pill">n8n</span>
+      </div>
+      <div class="project-impact">
+        <span class="impact-mark" aria-hidden="true"></span>
+        <span>Reduces manual ops by 60% · Deployed for B2B SaaS clients</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-type">Web Development</span>
+      <div class="project-name">High-Conversion Landing Pages</div>
+      <p class="project-desc">Custom-coded, performance-optimized landing pages with micro-animations and A/B tested copy structures. Built on GitHub repositories with full version control and clean architecture.</p>
+      <div class="project-meta">
+        <span class="project-pill">HTML/CSS/JS</span>
+        <span class="project-pill">React</span>
+        <span class="project-pill">GSAP</span>
+        <span class="project-pill">Figma</span>
+      </div>
+      <div class="project-impact">
+        <span class="impact-mark" aria-hidden="true"></span>
+        <span>100 PageSpeed Score · 2–3× CVR lift over template alternatives</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-type">Data & Analytics</span>
+      <div class="project-name">Business Intelligence Dashboard</div>
+      <p class="project-desc">Real-time analytics dashboard connecting multiple data sources into a single command center — giving founders live visibility into marketing ROI, revenue, and operational KPIs.</p>
+      <div class="project-meta">
+        <span class="project-pill">Python</span>
+        <span class="project-pill">Power BI</span>
+        <span class="project-pill">SQL</span>
+        <span class="project-pill">APIs</span>
+      </div>
+      <div class="project-impact">
+        <span class="impact-mark" aria-hidden="true"></span>
+        <span>Replaced 5 tools with 1 dashboard · 4-hour reporting cut to real-time</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-type">ML / AI</span>
+      <div class="project-name">Machine Learning Prediction Models</div>
+      <p class="project-desc">Predictive ML models built for demand forecasting, churn prediction, and customer segmentation — enabling data-driven decision making for e-commerce and SaaS businesses.</p>
+      <div class="project-meta">
+        <span class="project-pill">Scikit-learn</span>
+        <span class="project-pill">Pandas</span>
+        <span class="project-pill">NumPy</span>
+        <span class="project-pill">Jupyter</span>
+      </div>
+      <div class="project-impact">
+        <span class="impact-mark" aria-hidden="true"></span>
+        <span>Proven ML pipelines · Active repositories on GitHub</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-type">Frontend / UI</span>
+      <div class="project-name">Interactive UI Components (CodePen)</div>
+      <p class="project-desc">Production-ready UI components, creative CSS animations, and interactive JavaScript experiments. A living portfolio of frontend craft that proves our design-to-code capability.</p>
+      <div class="project-meta">
+        <span class="project-pill">CSS Animations</span>
+        <span class="project-pill">JavaScript</span>
+        <span class="project-pill">SVG</span>
+        <span class="project-pill">Canvas API</span>
+      </div>
+      <div class="project-impact">
+        <span class="impact-mark" aria-hidden="true"></span>
+        <span>Published on CodePen · Live demos available</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-type">E-commerce / Automation</span>
+      <div class="project-name">E-commerce Growth System</div>
+      <p class="project-desc">End-to-end e-commerce infrastructure: product listing optimization, automated inventory updates, ad creative generation, and performance dashboards — all connected in one workflow.</p>
+      <div class="project-meta">
+        <span class="project-pill">Shopify APIs</span>
+        <span class="project-pill">Python</span>
+        <span class="project-pill">Make.com</span>
+        <span class="project-pill">AI Copywriting</span>
+      </div>
+      <div class="project-impact">
+        <span class="impact-mark" aria-hidden="true"></span>
+        <span>Full-funnel automation · Scalable to 10,000+ SKUs</span>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 40px; padding: 32px; border: 0.5px solid var(--border); background: var(--warm);">
+    <span class="label" style="display: block; margin-bottom: 12px;">Project Drive Available on Request</span>
+    <p style="font-size: 14px; color: var(--muted);">Additional project files, design archives, and detailed case study documentation available under NDA for serious enquiries.</p>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" style="padding-top: 0;">
+  <div style="border-top: 0.5px solid var(--border); padding-top: 64px;">
+    <span class="label-accent" style="display: block; margin-bottom: 24px;">The Team</span>
+    <div class="grid-1-2 align-end" style="margin-bottom: 40px;">
+      <div class="display-md">7 Specialists.<br><em style="color: var(--accent);">One Vision.</em></div>
+      <p style="font-size: 16px; color: var(--muted); line-height: 1.8; max-width: 560px; justify-self: end;">We don't have account managers. Every person who pitches you is the person who builds for you. That's why our work is different.</p>
+    </div>
+  </div>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar">MS</div>
+      <div class="team-name">Manare (Lead)</div>
+      <div class="team-role">Founder · Full Stack + AI</div>
+      <p class="team-bio">Leads engineering and AI architecture. Combines deep technical capability with a sharp product mindset to build systems that scale.</p>
+      <div class="team-skills">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">AI Agents</span>
+        <span class="skill-tag">LangChain</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">SS</div>
+      <div class="team-name">Shagun Srivastava</div>
+      <div class="team-role">Development · Growth Strategy</div>
+      <p class="team-bio">Engineering-focused strategist who bridges the gap between product development and market execution. Active on GitHub and LinkedIn.</p>
+      <div class="team-skills">
+        <span class="skill-tag">Web Dev</span>
+        <span class="skill-tag">Strategy</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">SEO</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">AI</div>
+      <div class="team-name">AI Specialist</div>
+      <div class="team-role">ML Engineering · LLM Tools</div>
+      <p class="team-bio">Designs and deploys machine learning models, AI pipelines, and LLM-powered applications. Turns business problems into intelligent automation.</p>
+      <div class="team-skills">
+        <span class="skill-tag">ML Models</span>
+        <span class="skill-tag">NLP</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">OpenAI</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">DM</div>
+      <div class="team-name">Marketing Lead</div>
+      <div class="team-role">Performance Marketing · SEO</div>
+      <p class="team-bio">Manages paid acquisition and organic growth. Expert in Google Ads, Meta Ads, and Search AI optimization across ChatGPT, Perplexity, and Gemini.</p>
+      <div class="team-skills">
+        <span class="skill-tag">Google Ads</span>
+        <span class="skill-tag">Meta Ads</span>
+        <span class="skill-tag">Search AI</span>
+        <span class="skill-tag">CRO</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">DA</div>
+      <div class="team-name">Data Analyst</div>
+      <div class="team-role">Analytics · Business Intelligence</div>
+      <p class="team-bio">Transforms raw data into revenue decisions. Builds dashboards, attribution models, and reporting systems that actually tell the truth about what's working.</p>
+      <div class="team-skills">
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">GA4</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">EC</div>
+      <div class="team-name">E-commerce Specialist</div>
+      <div class="team-role">Amazon · Flipkart · Shopify</div>
+      <p class="team-bio">Knows the algorithms. Amazon A9, Flipkart search, Shopify conversion — optimizes every layer of the e-commerce funnel from discovery to purchase.</p>
+      <div class="team-skills">
+        <span class="skill-tag">Amazon SEO</span>
+        <span class="skill-tag">Shopify</span>
+        <span class="skill-tag">PPC</span>
+        <span class="skill-tag">CRO</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">CD</div>
+      <div class="team-name">Creative Director</div>
+      <div class="team-role">Design · Video · Brand</div>
+      <p class="team-bio">Creates brand identities, ad creatives, AI-powered videos, and social media content that doesn't just look good — it converts.</p>
+      <div class="team-skills">
+        <span class="skill-tag">Brand Design</span>
+        <span class="skill-tag">Video Editing</span>
+        <span class="skill-tag">AI Video</span>
+        <span class="skill-tag">Social</span>
+      </div>
+    </div>
+    <div class="team-card" style="background: var(--warm);">
+      <div style="margin-top: 20px;">
+        <div class="label-accent" style="margin-bottom: 16px;">The Dhandhasaarthi Advantage</div>
+        <p style="font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 20px;">Every team member is a specialist — not a generalist. When you hire us, you get a dedicated expert in each domain, not one person wearing 7 hats.</p>
+        <a href="#engage" class="btn-primary" style="font-size: 13px; padding: 12px 24px;">Work With Us →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<div class="full-bleed-warm">
+  <div class="section-inner">
+    <span class="label-accent" style="display: block; margin-bottom: 24px;">Industries We Serve</span>
+    <div class="grid-1-2 align-start" style="gap: 48px;">
+      <div class="display-md">We Speak<br>Your Industry's<br><em style="color: var(--accent);">Language.</em></div>
+      <div>
+        <p style="font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 40px;">Every industry has different growth levers. We've studied them. Whether you're a D2C brand or a B2B SaaS — we know what moves the needle in your specific market.</p>
+        <div class="industry-flex">
+          <div class="industry-pill"><span class="industry-icon icon-badge" aria-hidden="true">ECOM</span>E-commerce & D2C</div>
+          <div class="industry-pill"><span class="industry-icon icon-badge" aria-hidden="true">HEAL</span>Healthcare & Wellness</div>
+          <div class="industry-pill"><span class="industry-icon icon-badge" aria-hidden="true">ED</span>EdTech & Education</div>
+          <div class="industry-pill"><span class="industry-icon icon-badge" aria-hidden="true">START</span>Startups & Founders</div>
+          <div class="industry-pill"><span class="industry-icon icon-badge" aria-hidden="true">RE</span>Real Estate</div>
+          <div class="industry-pill"><span class="industry-icon icon-badge" aria-hidden="true">LOCAL</span>Local Businesses</div>
+          <div class="industry-pill"><span class="industry-icon icon-badge" aria-hidden="true">SAAS</span>SaaS Platforms</div>
+          <div class="industry-pill"><span class="industry-icon icon-badge" aria-hidden="true">AGCY</span>Digital Agencies</div>
+          <div class="industry-pill"><span class="industry-icon icon-badge" aria-hidden="true">FIN</span>Fintech & Finance</div>
+          <div class="industry-pill"><span class="industry-icon icon-badge" aria-hidden="true">FOOD</span>Food & Hospitality</div>
+          <div class="industry-pill"><span class="industry-icon icon-badge" aria-hidden="true">FASH</span>Fashion & Lifestyle</div>
+          <div class="industry-pill"><span class="industry-icon icon-badge" aria-hidden="true">MFG</span>Manufacturing & B2B</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CASE STUDIES -->
+<section id="case-studies">
+  <span class="label-accent" style="display: block; margin-bottom: 24px;">Case Studies</span>
+  <div class="grid-1-2 align-end" style="margin-bottom: 48px;">
+    <div class="display-md">Numbers Don't Lie. Neither Do We.</div>
+    <p style="font-size: 16px; color: var(--muted); max-width: 520px; justify-self: end; line-height: 1.8;">Below are structured case studies based on the problems we solve and the results our approach consistently delivers. Specific client names available upon request.</p>
+  </div>
+
+  <div class="case-grid">
+    <!-- Case 1 -->
+    <div class="case-card">
+      <div class="case-section" style="background: var(--warm);">
+        <div style="display: inline-block; background: var(--accent); color: white; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border-radius: 1px; margin-bottom: 16px;">Case Study 01</div>
+        <div class="display-sm" style="margin-bottom: 12px; font-size: 24px;">E-commerce Brand</div>
+        <span class="case-industry">D2C · Shopify</span>
+      </div>
+      <div class="case-section">
+        <div class="case-label">The Problem</div>
+        <p class="case-text">D2C brand spending ₹80k/month on ads with 1.2x ROAS. No conversion tracking, no funnel optimization, poor product listing quality. Revenue plateau for 8 months.</p>
+      </div>
+      <div class="case-section">
+        <div class="case-label">Our Solution</div>
+        <p class="case-text">Rebuilt Shopify store architecture, implemented GA4 + GTM tracking, redesigned ad creatives with AI video, restructured Meta funnel into TOFU/MOFU/BOFU stages.</p>
+      </div>
+      <div class="case-section">
+        <div class="case-label">Result</div>
+        <div class="case-result-num">3.8<span>×</span></div>
+        <p class="case-text" style="font-size: 13px;">ROAS in 90 days. Monthly revenue grew from ₹4L to ₹14L. Ad spend remained constant.</p>
+      </div>
+    </div>
+
+    <!-- Case 2 -->
+    <div class="case-card">
+      <div class="case-section" style="background: var(--ink); color: white;">
+        <div style="display: inline-block; background: var(--accent); color: white; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border-radius: 1px; margin-bottom: 16px;">Case Study 02</div>
+        <div class="display-sm" style="margin-bottom: 12px; font-size: 24px; color: white;">B2B SaaS Startup</div>
+        <span style="display: inline-block; padding: 4px 12px; border: 0.5px solid rgba(255,255,255,0.2); border-radius: 1px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 12px;">SaaS · AI Tools</span>
+      </div>
+      <div class="case-section">
+        <div class="case-label">The Problem</div>
+        <p class="case-text">Series A SaaS with strong product but no SEO presence. All traffic from paid. CAC was ₹12,000 per user. Needed organic growth engine.</p>
+      </div>
+      <div class="case-section">
+        <div class="case-label">Our Solution</div>
+        <p class="case-text">Built programmatic SEO infrastructure with 200+ landing pages, implemented technical SEO overhaul, optimized for Google AI Overview and ChatGPT citations.</p>
+      </div>
+      <div class="case-section">
+        <div class="case-label">Result</div>
+        <div class="case-result-num">340<span>%</span></div>
+        <p class="case-text" style="font-size: 13px;">Organic traffic growth in 6 months. CAC dropped from ₹12k to ₹2.8k. 3 featured in Google AI Overviews.</p>
+      </div>
+    </div>
+
+    <!-- Case 3 -->
+    <div class="case-card">
+      <div class="case-section" style="background: var(--accent2); color: white;">
+        <div style="display: inline-block; background: var(--accent); color: white; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border-radius: 1px; margin-bottom: 16px;">Case Study 03</div>
+        <div class="display-sm" style="margin-bottom: 12px; font-size: 24px; color: white;">Service Business</div>
+        <span style="display: inline-block; padding: 4px 12px; border: 0.5px solid rgba(255,255,255,0.2); border-radius: 1px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 12px;">Local Business · Automation</span>
+      </div>
+      <div class="case-section">
+        <div class="case-label">The Problem</div>
+        <p class="case-text">Professional services firm wasting 40 hours/week on manual tasks: lead follow-up, report generation, client onboarding. Scaling was impossible without more headcount.</p>
+      </div>
+      <div class="case-section">
+        <div class="case-label">Our Solution</div>
+        <p class="case-text">Built a custom AI automation stack: AI chatbot for lead qualification, n8n workflows for onboarding, automated reporting dashboard, and GPT-powered proposal generation.</p>
+      </div>
+      <div class="case-section">
+        <div class="case-label">Result</div>
+        <div class="case-result-num">62<span>%</span></div>
+        <p class="case-text" style="font-size: 13px;">Reduction in operational overhead. Team now handles 2.5× more clients without adding headcount. ROI achieved in month 2.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<div class="full-bleed stack-section">
+  <div class="section-inner">
+    <span class="label" style="display: block; margin-bottom: 24px; color: rgba(255,255,255,0.4);">Why Dhandhasaarthi</span>
+    <div class="grid-1-2 align-end" style="gap: 48px; margin-bottom: 48px;">
+      <div class="display-md" style="color: white;">The Reasons Our Clients<br>Don't Leave.</div>
+      <p style="font-size: 16px; color: rgba(255,255,255,0.5); max-width: 520px; justify-self: end; line-height: 1.8;">We're not the cheapest. We're not the biggest. But we might be the most accountable agency you've ever worked with — because we treat your money like it's ours.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">AI</span>
+        <div class="why-title">AI-First in Everything</div>
+        <p class="why-desc">We don't add AI as a feature — we design with intelligence at the core. Every solution we build leverages AI to <span class="why-accent">do more with less</span>, faster than traditional approaches.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">REV</span>
+        <div class="why-title">Revenue, Not Reports</div>
+        <p class="why-desc">We measure success by one metric: <span class="why-accent">did your revenue grow</span>? We build attribution systems, track unit economics, and optimize toward business outcomes — not vanity metrics.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">FULL</span>
+        <div class="why-title">Full-Stack Accountability</div>
+        <p class="why-desc">When strategy, development, and marketing are all under one roof, there's no blame game. <span class="why-accent">One team owns the entire outcome</span> — and we own it completely.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">FAST</span>
+        <div class="why-title">Speed as a Competitive Weapon</div>
+        <p class="why-desc">We build fast and iterate faster. In a market where your competitor's move today becomes your loss tomorrow, <span class="why-accent">speed of execution is strategy</span>.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">DATA</span>
+        <div class="why-title">Data-Driven, Not Opinion-Driven</div>
+        <p class="why-desc">Every recommendation we make is backed by data. We set up measurement frameworks before we begin, so you can see exactly <span class="why-accent">what's working and why</span>.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">LONG</span>
+        <div class="why-title">Built for the Long Game</div>
+        <p class="why-desc">We don't want a one-time project. We want to be the agency you're still working with in year 5. <span class="why-accent">We only win when you win</span> — and we're built for that partnership.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WORKFLOW -->
+<section id="workflow">
+  <span class="label-accent" style="display: block; margin-bottom: 24px;">How We Work</span>
+  <div class="grid-1-2 align-end" style="margin-bottom: 40px;">
+    <div class="display-md">Our 6-Step<br>Growth<br><em style="color: var(--accent);">System.</em></div>
+    <p style="font-size: 16px; color: var(--muted); max-width: 520px; justify-self: end; line-height: 1.8;">Every Dhandhasaarthi engagement follows this framework. It's not a project plan — it's a growth operating system designed to create compounding results over time.</p>
+  </div>
+  <div class="workflow-steps">
+    <div class="workflow-step">
+      <div class="workflow-num">01</div>
+      <div class="workflow-title">Discovery</div>
+      <p class="workflow-desc">Deep-dive audit of your business, market, competition, and current digital performance. We find the real levers — not just the obvious ones.</p>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-num">02</div>
+      <div class="workflow-title">Research</div>
+      <p class="workflow-desc">Competitor analysis, keyword research, customer persona mapping, and technology audit. We build on intelligence, not assumptions.</p>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-num">03</div>
+      <div class="workflow-title">Strategy</div>
+      <p class="workflow-desc">A concrete 90-day roadmap with prioritized actions, expected outcomes, KPIs, and budget allocations. No vague "digital transformation" decks.</p>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-num">04</div>
+      <div class="workflow-title">Development</div>
+      <p class="workflow-desc">We build. Fast. With weekly sprints, demo calls, and full GitHub/project transparency. You always know exactly where we are.</p>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-num">05</div>
+      <div class="workflow-title">Marketing</div>
+      <p class="workflow-desc">Activate organic, paid, and AI-powered channels simultaneously. Test fast, double down on what works, kill what doesn't. Data-led from day one.</p>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-num">06</div>
+      <div class="workflow-title">Scaling</div>
+      <p class="workflow-desc">Once the system works, we scale it. New channels, automation, AI optimization, and market expansion. The flywheel begins to spin on its own.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENT MODELS -->
+<section id="engage" style="padding-top: 0;">
+  <div style="border-top: 0.5px solid var(--border); padding-top: 64px;">
+    <span class="label-accent" style="display: block; margin-bottom: 24px;">Client Engagement</span>
+    <div class="grid-1-2 align-end" style="margin-bottom: 48px;">
+      <div class="display-md">Choose How We<br>Work Together.</div>
+      <p style="font-size: 16px; color: var(--muted); max-width: 520px; justify-self: end; line-height: 1.8;">We've designed three engagement models to match different stages of business growth. No cookie-cutter packages — just the right structure for where you are and where you're going.</p>
+    </div>
+  </div>
+  <div class="engage-grid">
+    <div class="engage-card">
+      <div class="engage-type">Model 01</div>
+      <div class="engage-title">Project-Based</div>
+      <p class="engage-desc">A defined scope, timeline, and deliverable. Perfect for businesses that need a specific output: a website, an AI tool, a campaign launch, or a complete rebrand.</p>
+      <ul class="engage-list">
+        <li>Fixed scope and clear deliverables</li>
+        <li>1–12 week timelines</li>
+        <li>Milestone-based payment</li>
+        <li>Full IP transfer on completion</li>
+        <li>Post-launch support included</li>
+      </ul>
+      <div class="engage-range">₹50k – ₹10L <span>/ project</span></div>
+    </div>
+
+    <div class="engage-card featured">
+      <div class="engage-badge">Most Popular</div>
+      <div class="engage-type">Model 02</div>
+      <div class="engage-title">Monthly Retainer</div>
+      <p class="engage-desc">An embedded growth team for your business. We handle strategy, execution, and optimization across marketing, tech, and AI — every single month.</p>
+      <ul class="engage-list">
+        <li>Dedicated team across all disciplines</li>
+        <li>Weekly performance reviews</li>
+        <li>Unlimited strategy calls</li>
+        <li>Priority execution SLA</li>
+        <li>Monthly ROI reporting</li>
+        <li>Proactive growth recommendations</li>
+      </ul>
+      <div class="engage-range">₹30k – ₹1.5L <span>/ month</span></div>
+    </div>
+
+    <div class="engage-card">
+      <div class="engage-type">Model 03</div>
+      <div class="engage-title">Growth Partnership</div>
+      <p class="engage-desc">For ambitious businesses ready to scale. We co-invest in your growth with a reduced retainer plus performance-based incentives tied to your revenue milestones.</p>
+      <ul class="engage-list">
+        <li>Lower base retainer</li>
+        <li>Revenue-linked bonuses</li>
+        <li>Quarterly OKR setting</li>
+        <li>Full-stack execution team</li>
+        <li>Board-level strategy access</li>
+        <li>We win when you win</li>
+      </ul>
+      <div class="engage-range">Custom <span>/ aligned to growth</span></div>
+    </div>
+  </div>
+
+  <div class="stats-3" style="margin-top: 40px;">
+    <div style="background: var(--bg); padding: 32px; text-align: center;">
+      <div style="font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--ink); margin-bottom: 8px;">48hr</div>
+      <span class="label">First Response Guarantee</span>
+    </div>
+    <div style="background: var(--warm); padding: 32px; text-align: center;">
+      <div style="font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--accent); margin-bottom: 8px;">Free</div>
+      <span class="label">Initial Growth Audit</span>
+    </div>
+    <div style="background: var(--bg); padding: 32px; text-align: center;">
+      <div style="font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--ink); margin-bottom: 8px;">NDA</div>
+      <span class="label">Signed Before All Calls</span>
+    </div>
+  </div>
+</section>
+
+<!-- FUTURE VISION -->
+<div class="full-bleed-green">
+  <div class="section-inner">
+    <span class="label" style="display: block; margin-bottom: 24px; color: rgba(255,255,255,0.4);">Our Vision for 2025–2030</span>
+    <div class="vision-layout">
+      <div class="vision-quote">
+        "The businesses that win the next decade are the ones that build AI and automation into their DNA — not as tools, but as culture."
+        <div style="font-size: 14px; font-style: normal; font-family: 'DM Sans', sans-serif; color: rgba(255,255,255,0.5); margin-top: 20px; font-weight: 300;">— Dhandhasaarthi Team</div>
+      </div>
+      <div class="vision-pillars">
+        <div class="vision-pillar">
+          <div class="pillar-icon">AI</div>
+          <div class="pillar-text">
+            <h4>AI as a Business Function</h4>
+            <p>We're building toward a world where every SME has access to the same AI capabilities as Fortune 500 companies — at a fraction of the cost.</p>
+          </div>
+        </div>
+        <div class="vision-pillar">
+          <div class="pillar-icon">AUTO</div>
+          <div class="pillar-text">
+            <h4>Automation-First Operations</h4>
+            <p>Helping 100+ businesses eliminate repetitive operations and redirect human energy toward high-leverage, creative work by 2026.</p>
+          </div>
+        </div>
+        <div class="vision-pillar">
+          <div class="pillar-icon">DATA</div>
+          <div class="pillar-text">
+            <h4>Data as Competitive Advantage</h4>
+            <p>Building the data infrastructure that lets our clients make faster, better decisions than their competitors — permanently.</p>
+          </div>
+        </div>
+        <div class="vision-pillar">
+          <div class="pillar-icon">GLBL</div>
+          <div class="pillar-text">
+            <h4>Indian Businesses, Global Standards</h4>
+            <p>Bringing McKinsey-level strategic thinking and Silicon Valley-grade tech execution to Indian businesses at accessible price points.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section" style="max-width: 1280px;">
+  <div class="cta-eyebrow">
+    <span class="label-accent">Ready to Grow?</span>
+  </div>
+  <div class="display cta-headline">
+    Let's Build<br>Something<br><em style="color: var(--accent); font-style: italic;">Remarkable.</em>
+  </div>
+  <p class="cta-sub">
+    Start with a free Growth Audit. We'll analyze your current digital presence, identify your biggest revenue leaks, and show you exactly where the opportunity is — at no cost, no commitment.
+  </p>
+  <div class="cta-actions">
+    <a href="mailto:hello@dhandhasaarthi.com" class="btn-primary" style="font-size: 16px; padding: 18px 48px;">Request Free Growth Audit →</a>
+  </div>
+  <div style="margin-top: 40px; display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap;">
+    <span class="cta-contact">hello@dhandhasaarthi.com</span>
+    <span class="cta-contact">Available on WhatsApp</span>
+    <a href="https://www.linkedin.com/in/manaregr8/" target="_blank" class="cta-contact" style="color: var(--accent); text-decoration: none;">↗ LinkedIn</a>
+    <a href="https://github.com/Manaregr8" target="_blank" class="cta-contact" style="color: var(--accent); text-decoration: none;">↗ GitHub</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<hr class="divider">
+<footer>
+  <div class="footer-logo">Dhandha<span>saarthi</span></div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#portfolio">Work</a>
+    <a href="#case-studies">Case Studies</a>
+    <a href="#engage">Pricing</a>
+    <a href="mailto:hello@dhandhasaarthi.com">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 Dhandhasaarthi · All rights reserved</div>
+</footer>
+
+</body>
+</html>

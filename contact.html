@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Dhandhasaarthi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0d0d0d;
+  --ink2: #2a2a2a;
+  --muted: #6b6b6b;
+  --border: #e0ddd8;
+  --surface: #f8f6f1;
+  --warm: #f0ece3;
+  --accent: #c8472b;
+  --accent2: #1a3a2e;
+  --gold: #c4973c;
+  --bg: #fdfbf7;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+.display-md {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+.label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.label-accent {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ─── Navbar ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5.5vw;
+  height: 64px;
+  background: rgba(253,251,247,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-logo img { height: 32px; width: auto; display: block; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--ink); }
+.nav-cta {
+  background: var(--ink);
+  color: var(--bg) !important;
+  padding: 9px 20px;
+  border-radius: 2px;
+  font-weight: 500 !important;
+}
+.nav-cta:hover { background: var(--accent) !important; }
+@media (max-width: 768px) { .nav-links { display: none; } }
+
+/* ─── Page Hero ─── */
+.page-hero {
+  padding: 140px 5.5vw 80px;
+  border-bottom: 0.5px solid var(--border);
+}
+.page-hero-title { font-family: 'Playfair Display', serif; font-size: clamp(48px, 7vw, 96px); font-weight: 900; line-height: 0.95; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 32px; }
+.page-hero-sub { font-size: 18px; color: var(--muted); max-width: 640px; line-height: 1.8; font-weight: 300; }
+
+/* ─── Contact Layout ─── */
+.contact-section {
+  padding: 80px 5.5vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.contact-info { position: sticky; top: 96px; }
+.contact-info h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3vw, 42px); font-weight: 700; line-height: 1.2; color: var(--ink); margin-bottom: 24px; }
+.contact-info p { font-size: 15px; color: var(--muted); line-height: 1.9; margin-bottom: 40px; }
+.contact-methods { display: flex; flex-direction: column; gap: 0; }
+.contact-method {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px 0;
+  border-top: 0.5px solid var(--border);
+}
+.contact-method:last-child { border-bottom: 0.5px solid var(--border); }
+.method-icon { width: 40px; height: 40px; background: var(--warm); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--accent); flex-shrink: 0; }
+.method-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.method-value { font-size: 15px; color: var(--ink); font-weight: 500; }
+.method-value a { color: var(--ink); text-decoration: none; }
+.method-value a:hover { color: var(--accent); }
+
+/* ─── Form ─── */
+.contact-form { background: var(--warm); padding: 48px 40px; border-radius: 2px; }
+.form-header { margin-bottom: 36px; }
+.form-header .label-accent { display: block; margin-bottom: 12px; }
+.form-header h3 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--ink); }
+.form-group { margin-bottom: 24px; }
+.form-group label { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 0.5px solid var(--border);
+  border-radius: 2px;
+  background: var(--bg);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s;
+  appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--accent); }
+.form-group textarea { resize: vertical; min-height: 140px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-submit {
+  width: 100%;
+  background: var(--accent);
+  color: white;
+  padding: 18px 36px;
+  border: none;
+  border-radius: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  margin-top: 8px;
+}
+.form-submit:hover { background: #a33820; transform: translateY(-1px); }
+.form-note { font-size: 12px; color: var(--muted); margin-top: 16px; text-align: center; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.05em; }
+
+/* ─── Guarantee strip ─── */
+.guarantee-strip { background: var(--ink); color: var(--bg); padding: 48px 5.5vw; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; }
+.guarantee-item { padding: 32px 24px; text-align: center; border-right: 0.5px solid rgba(255,255,255,0.08); }
+.guarantee-item:last-child { border-right: none; }
+.guarantee-num { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+.guarantee-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+
+/* ─── Footer ─── */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 5.5vw;
+  border-top: 0.5px solid var(--border);
+  font-size: 13px;
+  color: var(--muted);
+}
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 13px; }
+.footer-links a:hover { color: var(--ink); }
+
+/* ─── Success message ─── */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 40px;
+}
+.form-success .success-icon { font-size: 48px; margin-bottom: 16px; }
+.form-success h4 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
+.form-success p { font-size: 14px; color: var(--muted); line-height: 1.8; }
+
+@media (max-width: 1024px) {
+  .contact-section { grid-template-columns: 1fr; gap: 56px; }
+  .contact-info { position: static; }
+  .guarantee-strip { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .form-row { grid-template-columns: 1fr; }
+  .contact-form { padding: 32px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.svg" alt="Dhandhasaarthi logo">Dhandhasaarthi</a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="index.html#portfolio">Work</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta active">Get a Free Audit →</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <span class="label-accent" style="display: block; margin-bottom: 24px;">Get In Touch</span>
+  <div class="page-hero-title">Let's Build<br>Something That<br><em style="color: var(--accent);">Grows.</em></div>
+  <p class="page-hero-sub">Start with a free 45-minute growth audit. We'll map your opportunities, tell you exactly what we'd do — and give you the roadmap whether you hire us or not.</p>
+</div>
+
+<!-- CONTACT SECTION -->
+<div class="contact-section">
+
+  <!-- LEFT: Info -->
+  <div class="contact-info">
+    <h2>We'd love to hear<br>about your business.</h2>
+    <p>Tell us what you're working on, where you're stuck, and what success looks like for you. No hard sells, no spam — just an honest conversation about whether we're the right fit.</p>
+    <div class="contact-methods">
+      <div class="contact-method">
+        <div class="method-icon">✉</div>
+        <div>
+          <div class="method-label">Email</div>
+          <div class="method-value"><a href="mailto:hello@dhandhasaarthi.com">hello@dhandhasaarthi.com</a></div>
+        </div>
+      </div>
+      <div class="contact-method">
+        <div class="method-icon">📱</div>
+        <div>
+          <div class="method-label">WhatsApp</div>
+          <div class="method-value"><a href="https://wa.me/91XXXXXXXXXX" target="_blank">Chat with us on WhatsApp</a></div>
+        </div>
+      </div>
+      <div class="contact-method">
+        <div class="method-icon">🔗</div>
+        <div>
+          <div class="method-label">LinkedIn</div>
+          <div class="method-value"><a href="https://linkedin.com/company/dhandhasaarthi" target="_blank">linkedin.com/company/dhandhasaarthi</a></div>
+        </div>
+      </div>
+      <div class="contact-method">
+        <div class="method-icon">💻</div>
+        <div>
+          <div class="method-label">GitHub</div>
+          <div class="method-value"><a href="https://github.com/Manaregr8" target="_blank">github.com/Manaregr8</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Form -->
+  <div class="contact-form">
+    <div class="form-header">
+      <span class="label-accent">Free Growth Audit</span>
+      <h3>Tell us about<br>your business.</h3>
+    </div>
+
+    <div id="audit-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your Name *</label>
+          <input type="text" id="name" name="name" placeholder="Rahul Sharma" required>
+        </div>
+        <div class="form-group">
+          <label for="company">Company Name</label>
+          <input type="text" id="company" name="company" placeholder="Acme Pvt. Ltd.">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="rahul@company.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone / WhatsApp</label>
+          <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="service">What are you looking for? *</label>
+        <select id="service" name="service" required>
+          <option value="" disabled selected>Select a service…</option>
+          <option value="website">Website Development</option>
+          <option value="ai">AI Development</option>
+          <option value="seo">SEO & Search AI</option>
+          <option value="marketing">Performance Marketing</option>
+          <option value="ecommerce">E-commerce Growth</option>
+          <option value="software">Software / Product Dev</option>
+          <option value="analytics">Analytics & BI</option>
+          <option value="full">Full Digital Growth Strategy</option>
+          <option value="other">Something else…</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="budget">Monthly Budget Range</label>
+        <select id="budget" name="budget">
+          <option value="" disabled selected>Select a range…</option>
+          <option value="under25k">Under ₹25,000</option>
+          <option value="25k-50k">₹25,000 – ₹50,000</option>
+          <option value="50k-1L">₹50,000 – ₹1,00,000</option>
+          <option value="1L-3L">₹1,00,000 – ₹3,00,000</option>
+          <option value="3L+">₹3,00,000+</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Tell us about your business & goals *</label>
+        <textarea id="message" name="message" placeholder="What does your business do? What's the biggest challenge you're facing? What would success look like in 6 months?" required></textarea>
+      </div>
+
+      <button type="button" class="form-submit" onclick="handleSubmit()">Request Free Growth Audit →</button>
+      <p class="form-note">We respond within 48 hours · NDA signed before all calls · No spam, ever</p>
+    </div>
+
+    <div class="form-success" id="success-message">
+      <div class="success-icon">✓</div>
+      <h4>We've got your request.</h4>
+      <p>Thanks for reaching out. Our team will review your details and get back to you within 48 hours to schedule your free growth audit call.</p>
+    </div>
+  </div>
+</div>
+
+<!-- GUARANTEE STRIP -->
+<div class="guarantee-strip">
+  <div class="guarantee-item">
+    <div class="guarantee-num">48hr</div>
+    <div class="guarantee-label">First Response Guarantee</div>
+  </div>
+  <div class="guarantee-item">
+    <div class="guarantee-num">Free</div>
+    <div class="guarantee-label">Initial Growth Audit</div>
+  </div>
+  <div class="guarantee-item">
+    <div class="guarantee-num">NDA</div>
+    <div class="guarantee-label">Signed Before All Calls</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Dhandhasaarthi. All rights reserved.</span>
+  <ul class="footer-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+function handleSubmit() {
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const service = document.getElementById('service').value;
+  const message = document.getElementById('message').value.trim();
+
+  if (!name || !email || !service || !message) {
+    alert('Please fill in all required fields.');
+    return;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  document.getElementById('audit-form').style.display = 'none';
+  document.getElementById('success-message').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

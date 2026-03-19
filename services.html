@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Dhandhasaarthi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0d0d0d;
+  --ink2: #2a2a2a;
+  --muted: #6b6b6b;
+  --border: #e0ddd8;
+  --surface: #f8f6f1;
+  --warm: #f0ece3;
+  --accent: #c8472b;
+  --accent2: #1a3a2e;
+  --gold: #c4973c;
+  --bg: #fdfbf7;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+.display-md {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+.label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.label-accent {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ─── Navbar ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5.5vw;
+  height: 64px;
+  background: rgba(253,251,247,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-logo img { height: 32px; width: auto; display: block; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--ink); }
+.nav-cta {
+  background: var(--ink);
+  color: var(--bg) !important;
+  padding: 9px 20px;
+  border-radius: 2px;
+  font-weight: 500 !important;
+}
+.nav-cta:hover { background: var(--accent) !important; }
+@media (max-width: 768px) { .nav-links { display: none; } }
+
+/* ─── Page Hero ─── */
+.page-hero {
+  padding: 140px 5.5vw 80px;
+  border-bottom: 0.5px solid var(--border);
+}
+.page-hero-title { font-family: 'Playfair Display', serif; font-size: clamp(48px, 7vw, 96px); font-weight: 900; line-height: 0.95; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 32px; }
+.page-hero-sub { font-size: 18px; color: var(--muted); max-width: 640px; line-height: 1.8; font-weight: 300; }
+
+/* ─── Services Grid ─── */
+.services-section { padding: 80px 5.5vw; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 0.5px solid var(--border); margin-top: 48px; }
+.service-card { background: var(--bg); padding: 40px 32px; transition: background 0.2s; }
+.service-card:hover { background: var(--warm); }
+.service-icon { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); background: rgba(200,71,43,0.08); padding: 8px 14px; display: inline-block; border-radius: 2px; margin-bottom: 20px; }
+.service-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 16px; line-height: 1.2; }
+.service-desc { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 24px; }
+.service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; padding: 4px 10px; border: 0.5px solid var(--border); border-radius: 1px; color: var(--muted); }
+
+/* ─── Tech Stack ─── */
+.tech-section { background: var(--ink); color: var(--bg); padding: 80px 5.5vw; }
+.stack-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: rgba(255,255,255,0.08); border: 0.5px solid rgba(255,255,255,0.08); margin-top: 48px; }
+.stack-card { background: var(--ink); padding: 28px 24px; }
+.stack-card-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+.stack-items { display: flex; flex-direction: column; gap: 10px; }
+.stack-item { font-size: 13px; color: rgba(255,255,255,0.6); display: flex; align-items: center; gap: 8px; }
+.stack-dot { width: 4px; height: 4px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
+
+/* ─── Why section ─── */
+.why-section { padding: 80px 5.5vw; }
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
+.why-card { border-top: 2px solid var(--accent); padding-top: 24px; }
+.why-icon { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent); margin-bottom: 16px; }
+.why-title { font-size: 18px; font-weight: 500; color: var(--ink); margin-bottom: 12px; }
+.why-desc { font-size: 14px; color: var(--muted); line-height: 1.8; }
+.why-accent { color: var(--accent); font-weight: 500; }
+
+/* ─── CTA ─── */
+.cta-section { background: var(--warm); padding: 96px 5.5vw; text-align: center; }
+
+/* ─── Btn ─── */
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  padding: 16px 36px;
+  border: none;
+  border-radius: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: #a33820; transform: translateY(-1px); }
+
+/* ─── Footer ─── */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 5.5vw;
+  border-top: 0.5px solid var(--border);
+  font-size: 13px;
+  color: var(--muted);
+}
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 13px; }
+.footer-links a:hover { color: var(--ink); }
+
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .stack-grid { grid-template-columns: repeat(3, 1fr); }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .services-grid, .stack-grid, .why-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.svg" alt="Dhandhasaarthi logo">Dhandhasaarthi</a>
+  <ul class="nav-links">
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="index.html#portfolio">Work</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Get a Free Audit →</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <span class="label-accent" style="display: block; margin-bottom: 24px;">What We Do</span>
+  <div class="page-hero-title">Every Service,<br>One Goal:<br><em style="color: var(--accent);">Your Growth.</em></div>
+  <p class="page-hero-sub">We cover the full spectrum of digital transformation — from your first website to enterprise-grade AI automation. No matter where you are, we know the next move.</p>
+</div>
+
+<!-- SERVICES -->
+<div class="services-section">
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">WEB — 01</div>
+      <div class="service-title">Website Development</div>
+      <p class="service-desc">Custom-coded websites, WordPress, Shopify stores, SaaS platforms, and landing pages engineered for speed, conversion, and search ranking — not just aesthetics.</p>
+      <div class="service-tags">
+        <span class="tag">Custom Code</span><span class="tag">WordPress</span><span class="tag">Shopify</span><span class="tag">SaaS</span><span class="tag">Landing Pages</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">OPS — 02</div>
+      <div class="service-title">Software & Product Development</div>
+      <p class="service-desc">Business automation tools, custom dashboards, data pipelines, and SaaS products that eliminate manual work and give you an operational edge your competitors don't have.</p>
+      <div class="service-tags">
+        <span class="tag">Dashboards</span><span class="tag">Automation</span><span class="tag">SaaS</span><span class="tag">Data Pipelines</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">AI — 03</div>
+      <div class="service-title">AI Development</div>
+      <p class="service-desc">From intelligent chatbots to autonomous AI agents and LLM-powered SaaS — we build AI that works for your business 24/7 without adding headcount.</p>
+      <div class="service-tags">
+        <span class="tag">AI Agents</span><span class="tag">LLM Tools</span><span class="tag">Chatbots</span><span class="tag">Automation</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">SEO — 04</div>
+      <div class="service-title">SEO & Search AI Optimization</div>
+      <p class="service-desc">Rank not just on Google — but in ChatGPT, Perplexity, and Gemini AI overviews. Be the answer your customers find, wherever they search.</p>
+      <div class="service-tags">
+        <span class="tag">Technical SEO</span><span class="tag">AI Overviews</span><span class="tag">Programmatic</span><span class="tag">Off-Page</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">ADS — 05</div>
+      <div class="service-title">Performance Marketing</div>
+      <p class="service-desc">Google Ads and Meta campaigns engineered around unit economics — not impressions. Every rupee tracked, optimized, and scaled for maximum ROAS.</p>
+      <div class="service-tags">
+        <span class="tag">Google Ads</span><span class="tag">Meta Ads</span><span class="tag">Funnels</span><span class="tag">CRO</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">ECOM — 06</div>
+      <div class="service-title">E-commerce & Creative</div>
+      <p class="service-desc">Amazon, Flipkart, and Shopify growth — from product listing optimization to AI-powered ad creatives that stop the scroll and convert the click.</p>
+      <div class="service-tags">
+        <span class="tag">Amazon SEO</span><span class="tag">Flipkart</span><span class="tag">Creative</span><span class="tag">Video Ads</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">DATA — 07</div>
+      <div class="service-title">Analytics & Business Intelligence</div>
+      <p class="service-desc">Real-time dashboards and attribution systems that give you true visibility into what's driving revenue — and what's draining budget.</p>
+      <div class="service-tags">
+        <span class="tag">Power BI</span><span class="tag">GA4</span><span class="tag">SQL</span><span class="tag">Dashboards</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">BRAND — 08</div>
+      <div class="service-title">Brand & Creative Design</div>
+      <p class="service-desc">Brand identities, ad creatives, AI-powered videos, and social content — designed to convert, not just impress.</p>
+      <div class="service-tags">
+        <span class="tag">Brand Identity</span><span class="tag">AI Video</span><span class="tag">Social</span><span class="tag">UX/UI</span>
+      </div>
+    </div>
+    <div class="service-card" style="background: var(--accent); color: white;">
+      <div style="margin-top: 12px;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 20px;">Not sure what you need?</div>
+        <div style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: white; line-height: 1.2; margin-bottom: 20px;">Start with a Free Growth Audit.</div>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 24px;">We'll analyze your business, identify the highest-leverage opportunities, and build a custom roadmap. No commitment required.</p>
+        <a href="contact.html" style="background: white; color: var(--accent); padding: 12px 24px; border-radius: 2px; font-size: 13px; font-weight: 500; text-decoration: none; display: inline-block;">Book Your Audit →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TECH STACK -->
+<div class="tech-section">
+  <span class="label" style="display: block; margin-bottom: 24px; color: rgba(255,255,255,0.4);">Technology Stack</span>
+  <div class="display-md" style="color: white; margin-bottom: 16px;">We Build With<br>the Best Tools.</div>
+  <p style="font-size: 14px; color: rgba(255,255,255,0.5); max-width: 480px; line-height: 1.8;">Our technology choices are deliberate. Mature, battle-tested stacks for reliability and cutting-edge AI tools for competitive advantage.</p>
+  <div class="stack-grid">
+    <div class="stack-card">
+      <div class="stack-card-title">Frontend</div>
+      <div class="stack-items">
+        <div class="stack-item"><span class="stack-dot"></span>React.js</div>
+        <div class="stack-item"><span class="stack-dot"></span>Next.js</div>
+        <div class="stack-item"><span class="stack-dot"></span>Tailwind CSS</div>
+        <div class="stack-item"><span class="stack-dot"></span>GSAP / Framer</div>
+        <div class="stack-item"><span class="stack-dot"></span>Three.js</div>
+      </div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-card-title">Backend</div>
+      <div class="stack-items">
+        <div class="stack-item"><span class="stack-dot"></span>Node.js</div>
+        <div class="stack-item"><span class="stack-dot"></span>Python / FastAPI</div>
+        <div class="stack-item"><span class="stack-dot"></span>PostgreSQL</div>
+        <div class="stack-item"><span class="stack-dot"></span>MongoDB</div>
+        <div class="stack-item"><span class="stack-dot"></span>Redis</div>
+      </div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-card-title">AI / ML</div>
+      <div class="stack-items">
+        <div class="stack-item"><span class="stack-dot"></span>GPT-4o / Claude</div>
+        <div class="stack-item"><span class="stack-dot"></span>LangChain</div>
+        <div class="stack-item"><span class="stack-dot"></span>Scikit-learn</div>
+        <div class="stack-item"><span class="stack-dot"></span>Hugging Face</div>
+        <div class="stack-item"><span class="stack-dot"></span>Vector DBs</div>
+      </div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-card-title">Marketing</div>
+      <div class="stack-items">
+        <div class="stack-item"><span class="stack-dot"></span>Google Ads</div>
+        <div class="stack-item"><span class="stack-dot"></span>Meta Business</div>
+        <div class="stack-item"><span class="stack-dot"></span>SEMrush / Ahrefs</div>
+        <div class="stack-item"><span class="stack-dot"></span>GA4 / GTM</div>
+        <div class="stack-item"><span class="stack-dot"></span>Hotjar / Clarity</div>
+      </div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-card-title">Automation</div>
+      <div class="stack-items">
+        <div class="stack-item"><span class="stack-dot"></span>n8n / Make.com</div>
+        <div class="stack-item"><span class="stack-dot"></span>Zapier</div>
+        <div class="stack-item"><span class="stack-dot"></span>AWS Lambda</div>
+        <div class="stack-item"><span class="stack-dot"></span>GitHub Actions</div>
+        <div class="stack-item"><span class="stack-dot"></span>Docker</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY -->
+<div class="why-section">
+  <span class="label-accent" style="display: block; margin-bottom: 24px;">Why Dhandhasaarthi</span>
+  <div class="display-md" style="margin-bottom: 12px;">The Reasons Our Clients<br><em style="color: var(--accent);">Don't Leave.</em></div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">AI-FIRST</div>
+      <div class="why-title">AI in Everything</div>
+      <p class="why-desc">We don't add AI as a feature — we design with intelligence at the core. Every solution leverages AI to <span class="why-accent">do more with less</span>.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">REVENUE</div>
+      <div class="why-title">Revenue, Not Reports</div>
+      <p class="why-desc">We measure success by one metric: <span class="why-accent">did your revenue grow?</span> We track unit economics and optimize toward business outcomes.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">FULL-STACK</div>
+      <div class="why-title">Full-Stack Accountability</div>
+      <p class="why-desc">Strategy, development, and marketing under one roof — <span class="why-accent">one team owns the entire outcome</span>. No blame game, no hand-offs.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">SPEED</div>
+      <div class="why-title">Speed as a Weapon</div>
+      <p class="why-desc">We move fast and iterate faster. In digital, <span class="why-accent">speed of execution is strategy</span> — and we're built to move at market speed.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">DATA</div>
+      <div class="why-title">Data-Driven Always</div>
+      <p class="why-desc">Every recommendation is backed by data. We set up measurement frameworks before we begin so you can see <span class="why-accent">exactly what's working</span>.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">LONG</div>
+      <div class="why-title">The Long Game</div>
+      <p class="why-desc">We want to be the agency you're still working with in year 5. <span class="why-accent">We only win when you win</span> — built for real partnership.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <span class="label-accent" style="display: block; margin-bottom: 24px;">Start Today</span>
+  <div class="display-md" style="margin-bottom: 24px;">Ready to Turn Digital Into<br>a <em style="color: var(--accent);">Revenue Engine?</em></div>
+  <p style="font-size: 16px; color: var(--muted); margin-bottom: 40px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.8;">Book a free audit and we'll show you exactly where your growth opportunities are — no commitment, full transparency.</p>
+  <a href="contact.html" class="btn-primary">Get a Free Growth Audit →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Dhandhasaarthi. All rights reserved.</span>
+  <ul class="footer-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
